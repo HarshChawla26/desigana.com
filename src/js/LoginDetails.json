@@ -1,0 +1,42 @@
+{"Details":[{
+        "id":1,
+        "name":"Harsh",
+        "username":"harsh",
+        "age":19,
+        "Gender":"male",
+        "email":"harshchawla@gmail.com",
+        "password":"harsh2002"
+    },{
+        "id":2,
+        "name":"arshdeep singh",
+        "username":"arshsing29",
+        "age":19,
+        "Gender":"female",
+        "email":"arshsing29@gmail.com",
+        "password":"arsh@19"
+    },{
+        "id":3,
+        "name":"Rohit",
+        "username":"roHit",
+        "age":19,
+        "Gender":"male",
+        "email":"rohitkr@gmail.com",
+        "password":"rohit_@"
+    },{
+        "id":4,
+        "name":"Rahul",
+        "username":"RahulBoiii",
+        "age":19,
+        "Gender":"male",
+        "email":"rahulcoder@gmail.com",
+        "password":"RahulCodeLove"
+    },{
+        "id":5,
+        "name":"Harshita",
+        "username":"_rahul",
+        "age":19,
+        "Gender":"Female",
+        "email":"harshii56@gmail.com",
+        "password":"rahul"
+    }]
+}

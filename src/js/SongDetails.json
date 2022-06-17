@@ -1,0 +1,288 @@
+{
+    "Default":[{
+        "arrRef":0,
+        "SongId":1,
+        "name":"Select Song to Play",
+        "singer":"unknown",
+        "img":"media/defaults/defaultMusic.jpg",
+        "song":"",
+        "duration":"00:00"
+        
+    }],
+    "HindiMusicDetail" : [
+    {
+        "arrRef":0,
+        "SongId":1,
+        "name":"Dance Meri Rani",
+        "singer":"Guru Randhawa",
+        "img":"media/latest_hindi/posters/dance_meri_rani.png",
+        "song":"media/latest_hindi/music/dance_meri_rani.mp3",
+        "duration":"03:43"
+        },
+    {
+        "arrRef":0,
+        "SongId":2,
+        "name":"Jugnu",
+        "singer":"Badshah",
+        "img":"media/latest_hindi/posters/jugnu.png",
+        "song":"media/latest_hindi/music/jugnu.mp3",
+        "duration":"03:50"
+        },
+    {
+        "arrRef":0,
+        "SongId":3,
+        "name":"Kalle Kalle",
+        "singer":"Priya Saraiya",
+        "img":"media/latest_hindi/posters/kalle_kalle.png",
+        "song":"media/latest_hindi/music/kalle_kalle.mp3",
+        "duration":"03:47"
+        },
+    {
+        "arrRef":0,
+        "SongId":4,
+        "name":"Kabir Singh Mashup",
+        "singer":"Unknown artist",
+        "img":"media/latest_hindi/posters/ks_mashup.png",
+        "song":"media/latest_hindi/music/ks_mashup.mp3",
+        "duration":"05:19"
+        },
+    {
+        "arrRef":0,
+        "SongId":5,
+        "name":"Main chala",
+        "singer":"Guru Randhawa & Lulia Vantur",
+        "img":"media/latest_hindi/posters/main_chala.png",
+        "song":"media/latest_hindi/music/main_chala.mp3",
+        "duration":"04:32"
+        },
+    {
+        "arrRef":0,
+        "SongId":6,
+        "name":"Mere yara",
+        "singer":"Arijit Singh & Neeti Mohan",
+        "img":"media/latest_hindi/posters/mere_yara.png",
+        "song":"media/latest_hindi/music/mere_yara.mp3",
+        "duration":"04:45"
+    },
+    {
+        "arrRef":0,
+        "SongId":7,
+        "name":"Ranjha",
+        "singer":"B praak & Jasleen Royal",
+        "img":"media/latest_hindi/posters/ranjha.png",
+        "song":"media/latest_hindi/music/ranjha.mp3",
+        "duration":"03:48"
+    },
+    {
+        "arrRef":0,
+        "SongId":8,
+        "name":"Shayad",
+        "singer":"Arijit Singh, Pritam ChakraBorty, Madhubanti Bagchi",
+        "img":"media/latest_hindi/posters/shayad.png",
+        "song":"media/latest_hindi/music/shayad.mp3",
+        "duration":"04:07"
+    },
+    {
+        "arrRef":0,
+        "SongId":9,
+        "name":"Chandigarh kare ashiqui",
+        "singer":"Jassi Sidhu, Jigar Saraiya, IP Singh & Sachin Sanghvi",
+        "img":"media/latest_hindi/posters/title_track_ckq.png",
+        "song":"media/latest_hindi/music/title_track_ckq.mp3",
+        "duration":"02:33"
+    },
+    {
+        "arrRef":0,
+        "SongId":10,
+        "name":"Tumbe Te Zumba",
+        "singer":"Jassi Sidhu, Jigar Saraiya, IP Singh & Sachin Sanghvi",
+        "img":"media/latest_hindi/posters/tumbe_te_zumba.png",
+        "song":"media/latest_hindi/music/tumbe_te_zumba.mp3",
+        "duration":"02:50"
+    }
+],
+"EnglishMusicDetail":[
+    {
+        "arrRef":10,
+        "SongId":11,
+        "name":"At My Worst",
+        "singer":"Pink sweats",
+        "img":"media/latest_english/posters/at_my_worst.png",
+        "song":"media/latest_english/music/at_my_worst.mp3",
+        "duration":"03:21"
+    },
+    {
+        "arrRef":10,
+        "SongId":12,
+        "name":"Cheap Thrills",
+        "singer":"Sia",
+        "img":"media/latest_english/posters/cheap_thrills.png",
+        "song":"media/latest_english/music/cheap_thrills.mp3",
+        "duration":"04:21"
+    },
+    {
+        "arrRef":10,
+        "SongId":13,
+        "name":"Closer",
+        "singer":"The chainsmokers",
+        "img":"media/latest_english/posters/closer.png",
+        "song":"media/latest_english/music/closer.mp3",
+        "duration":"04:21"
+    },
+    {
+        "arrRef":10,
+        "SongId":14,
+        "name":"Counting Stars",
+        "singer":"OneRepublic",
+        "img":"media/latest_english/posters/counting_stars.png",
+        "song":"media/latest_english/music/counting_stars.mp3",
+        "duration":"04:43"
+    },
+    {
+        "arrRef":10,
+        "SongId":15,
+        "name":"Industry Baby",
+        "singer":"Jack Harlow & Lil Nas X",
+        "img":"media/latest_english/posters/industry_baby.png",
+        "song":"media/latest_english/music/industry_baby.mp3",
+        "duration":"03:55"
+    },
+    {
+        "arrRef":10,
+        "SongId":16,
+        "name":"On my Way",
+        "singer":"Alan Walker, Farruko & Sabrina Carpenter",
+        "img":"media/latest_english/posters/on_my_way.png",
+        "song":"media/latest_english/music/on_my_way.mp3",
+        "duration":"03:36"
+    },
+    {
+        "arrRef":10,
+        "SongId":17,
+        "name":"Peaches",
+        "singer":"Justin Bieber",
+        "img":"media/latest_english/posters/peaches.png",
+        "song":"media/latest_english/music/peaches.mp3",
+        "duration":"03:17"
+    },
+    {
+        "arrRef":10,
+        "SongId":18,
+        "name":"Perfect",
+        "singer":"Ed Sheeren",
+        "img":"media/latest_english/posters/perfect.png",
+        "song":"media/latest_english/music/perfect.mp3",
+        "duration":"04:39"
+    },
+    {
+        "arrRef":10,
+        "SongId":19,
+        "name":"Run away",
+        "singer":"Aurora",
+        "img":"media/latest_english/posters/runaway.png",
+        "song":"media/latest_english/music/runaway.mp3",
+        "duration":"04:09"
+    },
+    {
+        "arrRef":10,
+        "SongId":20,
+        "name":"The Nights",
+        "singer":"Avicii",
+        "img":"media/latest_english/posters/the_nights.png",
+        "song":"media/latest_english/music/the_nights.mp3",
+        "duration":"03:10"
+    }
+],
+"PunjabiMusicDetail":[
+    {
+        "arrRef":20,
+        "SongId":21,
+        "name":"Bijlee Bijlee",
+        "singer":"Hardy Sandhu",
+        "img":"media/latest_punjabi/posters/bijlee_bijlee.png",
+        "song":"media/latest_punjabi/music/bijlee_bijlee.mp3",
+        "duration":"04:04"
+    },
+    {
+        "arrRef":20,
+        "SongId":22,
+        "name":"Desires",
+        "singer":"AP Dhillon and Gurinder Gill",
+        "img":"media/latest_punjabi/posters/desires.png",
+        "song":"media/latest_punjabi/music/desires.mp3",
+        "duration":"02:48"
+    },
+    {
+        "arrRef":20,
+        "SongId":23,
+        "name":"Do Gallan",
+        "singer":"Garry Sandhu",
+        "img":"media/latest_punjabi/posters/do_gallan.png",
+        "song":"media/latest_punjabi/music/do_gallan.mp3",
+        "duration":"04:37"
+    },
+    {
+        "arrRef":20,
+        "SongId":24,
+        "name":"Excuses",
+        "singer":"AP Dhillon",
+        "img":"media/latest_punjabi/posters/excuses.png",
+        "song":"media/latest_punjabi/music/excuses.mp3",
+        "duration":"02:56"
+    },
+    {
+        "arrRef":20,
+        "SongId":25,
+        "name":"Feelings",
+        "singer":"Garry Sandhu",
+        "img":"media/latest_punjabi/posters/feelings.png",
+        "song":"media/latest_punjabi/music/feelings.mp3",
+        "duration":"03:13"
+    },
+    {
+        "arrRef":20,
+        "SongId":26,
+        "name":"Jinde Meriye",
+        "singer":"Jassie Gill",
+        "img":"media/latest_punjabi/posters/jinde_meriye.png",
+        "song":"media/latest_punjabi/music/jinde_meriye.mp3",
+        "duration":"04:08"
+    },
+    {
+        "arrRef":20,
+        "SongId":27,
+        "name":"Moonlight",
+        "singer":"Harnoor",
+        "img":"media/latest_punjabi/posters/moonlight.png",
+        "song":"media/latest_punjabi/music/moonlight.mp3",
+        "duration":"03:33"
+    },
+    {
+        "arrRef":20,
+        "SongId":28,
+        "name":"Schedule",
+        "singer":"Tegi Pannu",
+        "img":"media/latest_punjabi/posters/schedule.png",
+        "song":"media/latest_punjabi/music/schedule.mp3",
+        "duration":"02:36"
+    },
+    {
+        "arrRef":20,
+        "SongId":29,
+        "name":"YKWIM",
+        "singer":"Karan Aujla",
+        "img":"media/latest_punjabi/posters/ykwim.png",
+        "song":"media/latest_punjabi/music/ykwim.mp3",
+        "duration":"03:38"
+    },
+    {
+        "arrRef":20,
+        "SongId":30,
+        "name":"Distance Love",
+        "singer":"Zehr Vibe",
+        "img":"media/latest_punjabi/posters/distance_love.png",
+        "song":"media/latest_punjabi/music/distance_love.mp3",
+        "duration":"03:24"
+    }
+]
+}
