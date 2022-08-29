@@ -1,4 +1,4 @@
-import React from 'react';
+import {React} from 'react';
 
 import MusicDetail from './../js/SongDetails'
 
@@ -45,9 +45,9 @@ export default function Main(props) {
             <div className="outer-carousel">
                 <div className="carousel">
                     {/* <!-- these are the 3 images in the carousel --> */}
-                    <img src={cr1}/>
-                    <img src={cr2}/>
-                    <img src={cr3}/>
+                    <img src={cr1}  alt="not available"/>
+                    <img src={cr2} alt="not available"/>
+                    <img src={cr3} alt="not available"/>
                 </div>
             </div>
             <div className="latest-release">
@@ -61,7 +61,7 @@ export default function Main(props) {
                     <div className="card">
                         <div>
                             {/* <!-- image corresponding to the card --> */}
-                            <img src={lR1}/>
+                            <img src={lR1} alt="not available" />
                             {/* <!-- play button, which will be shown on hover on the card image --> */}
                             <div className="play-button">
                                 <i className="fas fa-play" style={{width:'100%', height:'100%', display:'inline-block'}}></i>
@@ -108,7 +108,7 @@ export default function Main(props) {
                     {/* <!-- second card --> */}
                     <div className="card">
                         <div>
-                            <img src={lR2}/>
+                            <img src={lR2} alt="not available"/>
                             <div className="play-button">
                                 <i className="fas fa-play"style={{width:'100%', height:'100%', display:'inline-block'}}></i>
                             </div>
@@ -150,7 +150,7 @@ export default function Main(props) {
                     {/* <!-- third card --> */}
                     <div className="card">
                         <div>
-                            <img src={lR3}/>
+                            <img src={lR3} alt="not available" />
                             <div className="play-button">
                                 <i className="fas fa-play" style={{width:'100%', height:'100%', display:'inline-block'}}></i>
                             </div>
@@ -192,7 +192,7 @@ export default function Main(props) {
                     {/* <!-- fourth card --> */}
                     <div className="card">
                         <div>
-                            <img src={lR4}/>
+                            <img src={lR4} alt="not available"/>
                             <div className="play-button">
                                 <i className="fas fa-play" style={{width:'100%', height:'100%', display:'inline-block'}}></i>
                             </div>
@@ -236,7 +236,7 @@ export default function Main(props) {
                     {/* <!-- fifth card --> */}
                     <div className="card">
                         <div>
-                            <img src={lR5}/>
+                            <img src={lR5} alt="not available"/>
                             <div className="play-button">
                                 <i className="fas fa-play" style={{width:'100%', height:'100%', display:'inline-block'}}></i>
                             </div>
@@ -278,7 +278,7 @@ export default function Main(props) {
                     {/* <!-- sixth card --> */}
                     <div className="card">
                         <div>
-                            <img src={lR6} />
+                            <img src={lR6}  alt="not available"/>
                             <div className="play-button">
                                 <i className="fas fa-play" style={{width:'100%', height:'100%', display:'inline-block'}}></i>
                             </div>
@@ -332,7 +332,7 @@ export default function Main(props) {
                     {/* <!-- first artist --> */}
                     <a href="Single Playlist Screen.html">
                         <div>
-                            <img style={{boxShadow:'var(--box-shadow-value)'}} src={pA1}/>
+                            <img style={{boxShadow:'var(--box-shadow-value)'}} src={pA1} alt="not available"/>
                             <div><i className="fas fa-play"></i></div>
                             <p>
                                 Adele
@@ -342,7 +342,7 @@ export default function Main(props) {
                     {/* <!-- second artist --> */}
                     <a href="Single Playlist Screen.html">
                         <div>
-                            <img style={{boxShadow:'var(--box-shadow-value)'}} src={pA2} />
+                            <img style={{boxShadow:'var(--box-shadow-value)'}} src={pA2} alt="not available" />
                             <div><i className="fas fa-play"></i></div>
                             <p>
                                 Billie Eilish
@@ -352,7 +352,7 @@ export default function Main(props) {
                     {/* <!-- third artist --> */}
                     <a href="Single Playlist Screen.html">
                         <div>
-                            <img style={{boxShadow:'var(--box-shadow-value)'}}  src={pA3} width="15vw" height="10vw"/>
+                            <img style={{boxShadow:'var(--box-shadow-value)'}} alt="not available"  src={pA3} width="15vw" height="10vw"/>
                             <div><i className="fas fa-play"></i></div>
                             <p>
                                 Arijit Singh
@@ -362,7 +362,7 @@ export default function Main(props) {
                     {/* <!-- fourth artist --> */}
                     <a href="Single Playlist Screen.html">
                         <div>
-                            <img style={{boxShadow:'var(--box-shadow-value)'}} src={pA4}/>
+                            <img style={{boxShadow:'var(--box-shadow-value)'}} alt="not available" src={pA4}/>
                             <div><i className="fas fa-play"></i></div>
                             <p>
                                 Camila Cabello
@@ -372,7 +372,7 @@ export default function Main(props) {
                     {/* <!-- fifth artist --> */}
                     <a href="Single Playlist Screen.html">
                         <div>
-                            <img style={{boxShadow:'var(--box-shadow-value)'}} src={pA5}/>
+                            <img style={{boxShadow:'var(--box-shadow-value)'}} alt="not available" src={pA5}/>
                             <div><i className="fas fa-play"></i></div>
                             <p>
                             Darshan Raval
@@ -382,7 +382,7 @@ export default function Main(props) {
                     {/* <!-- 6th artist --> */}
                     <a href="Single Playlist Screen.html">
                         <div>
-                            <img style={{boxShadow:'var(--box-shadow-value)'}} src={pA6}/>
+                            <img style={{boxShadow:'var(--box-shadow-value)'}} alt="not available" src={pA6}/>
                             <div><i className="fas fa-play"></i></div>
                             <p>
                                 Ed Sheeran
@@ -392,7 +392,7 @@ export default function Main(props) {
                     {/* <!-- 7th artist --> */}
                     <a href="Single Playlist Screen.html">
                         <div>
-                            <img style={{boxShadow:'var(--box-shadow-value)'}} src={pA7}/>
+                            <img style={{boxShadow:'var(--box-shadow-value)'}} alt="not available" src={pA7}/>
                             <div><i className="fas fa-play"></i></div>
                             <p>
                                 Eminem
@@ -402,7 +402,7 @@ export default function Main(props) {
                     {/* <!-- 8th artist --> */}
                     <a href="Single Playlist Screen.html">
                         <div>
-                            <img style={{boxShadow:'var(--box-shadow-value)'}}  src={pA8}/>
+                            <img style={{boxShadow:'var(--box-shadow-value)'}} alt="not available"  src={pA8}/>
                             <div><i className="fas fa-play"></i></div>
                             <p>
                                 Katy Perry
@@ -412,7 +412,7 @@ export default function Main(props) {
                     {/* <!-- 9th artist --> */}
                     <a href="Single Playlist Screen.html">
                         <div>
-                            <img style={{boxShadow:'var(--box-shadow-value)'}} src={pA9}/>
+                            <img style={{boxShadow:'var(--box-shadow-value)'}} alt="not available" src={pA9}/>
                             <div><i className="fas fa-play"></i></div>
                             <p>
                                 Rudy Mancuso
@@ -422,7 +422,7 @@ export default function Main(props) {
                     {/* <!-- 10th artist --> */}
                     <a href="Single Playlist Screen.html">
                         <div>
-                            <img style={{boxShadow:'var(--box-shadow-value)'}} src={pA10}  />
+                            <img style={{boxShadow:'var(--box-shadow-value)'}} alt="not available" src={pA10}  />
                             <div><i className="fas fa-play"></i></div>
                             <p>
                                 Snoop Dogg

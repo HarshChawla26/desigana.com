@@ -1,8 +1,6 @@
-import React,{useState} from 'react';
+import React from 'react';
 import 'animate.css';
 import './../css/Stylesheet_main.css';
-
-import MusicDetail from './../js/SongDetails'
 import QueueItems from './QueueItems';
 
 export default function Queue(props) {
@@ -22,7 +20,7 @@ export default function Queue(props) {
                             {/* <!-- first playlist item --> */}
                             
                         {props.songDet.map((ele)=>{
-                            return <QueueItems loadMusic={props.loadMusic}currSong={props.currSong} currarr={props.currarr} play={props.play} key={ele.SongId} tNo={ele.SongId} tName={ele.name} tsinger={ele.singer} tImg={ele.img}/>
+                            return <QueueItems loadMusic={props.loadMusic} currSong={props.currSong} currarr={props.currarr} play={props.play} key={ele.SongId} tNo={ele.SongId} tName={ele.name} tsinger={ele.singer} tImg={ele.img}/>
                             
                         })}
                             

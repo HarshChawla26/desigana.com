@@ -1,4 +1,4 @@
-import React,{useState,useRef,useEffect} from 'react';
+import {React,useState,useRef,useEffect} from 'react';
 import './../js/Hsongscript'
 
 import './../css/Stylesheet_main.css';
@@ -53,7 +53,7 @@ export default function Footer(props) {
     }
     const [isPlaying, setisPlaying] = useState(false);
     window.addEventListener("load",()=>{
-        if(localStorage.getItem('vol')!=1){
+        if(localStorage.getItem('vol')!==1){
         var x=localStorage.getItem('vol')
         localStorage.setItem('vol',x)
         setvol(x);
@@ -90,7 +90,6 @@ export default function Footer(props) {
         var curr = audioEl.current.currentTime;
         var total = audioEl.current.duration;  
         var currPer = (curr/total) * 100;
-        console.log(currPer);
         
         var cmin = parseInt(curr/60);
         var csec = parseInt(curr%60);
@@ -154,13 +153,13 @@ export default function Footer(props) {
     
 
     document.addEventListener("keydown",(event)=>{
-        if(event.keyCode == '32' ){
+        if(event.keyCode === '32' ){
             toggleMusic();
         }
-        if(event.keyCode == '37' ){
+        if(event.keyCode === '37' ){
             preMus();
         }
-        if(event.keyCode == '39' ){
+        if(event.keyCode === '39' ){
             nexMus();
         }
     })
@@ -188,10 +187,10 @@ export default function Footer(props) {
             </div>
             <div className="heart-and-ban-icon">
                 <span>
-                    <a href="#"><i className="far fa-heart"></i></a>
+                    <a href="/"><i className="far fa-heart"></i></a>
                 </span>
                 <span>
-                    <a href="#"><i className="fas fa-ban"></i></a>
+                    <a href="/"><i className="fas fa-ban"></i></a>
                 </span>
             </div>
         </div>
@@ -227,10 +226,10 @@ export default function Footer(props) {
         <div className="extras">
             {/* <!-- <p></p> --> */}
             <div>
-               <a href="#" id="plist"><i className="fas fa-list-ul"></i></a>
+               <a href="/" id="plist"><i className="fas fa-list-ul"></i></a>
             </div>
             <div>
-                <a href="#" id="lap"><i className="fas fa-laptop"></i></a>
+                <a href="/" id="lap"><i className="fas fa-laptop"></i></a>
             </div>
             <div className="mute-btn" onClick={togglevol}>
                 <i className={`fas fa-volume-${isMuted?'mute':'up'}`}></i>

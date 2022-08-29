@@ -473,7 +473,7 @@ main {
 	transition: all ease-in-out 0.2s;
 }
 /* actual play icon from font awesome */
-.play-button i {
+.play-button {
 	padding-top: 28%;
 }
 /* hovering effect for the play button */
@@ -818,7 +818,7 @@ input[type="checkbox"]:checked ~ .latest-release-dropdown {
 	min-height: 60px;
 	/* transition: box-shadow ease-in-out 0.1s; */
 }
-.language-content i{
+.language-content svg{
 	position:absolute;
 	right:7%;
 	transform:scale(1);
@@ -827,7 +827,7 @@ input[type="checkbox"]:checked ~ .latest-release-dropdown {
 	font-size: 200%;
 	color:chartreuse;
 }
-.language-content div:hover i{
+.language-content div:hover svg{
 	transition:play-btn ease-in 300s;
 	animation-name: play-btn;
 	animation-iteration-count: 1; 
@@ -1067,7 +1067,7 @@ hr {
 .coverer{
 	position:relative;overflow: hidden;
 }
-.coverer i{
+.coverer svg{
 	position:absolute;
 	right:5%;transform:scale(1);
 	bottom: -100%;
@@ -1098,7 +1098,7 @@ hr {
 	
 }
 /*:hover*/
-.playlist-item:hover .coverer i {
+.playlist-item:hover .coverer svg {
 	transition:play-btn ease-in 300s;
 	animation-name: play-btn;
 	animation-iteration-count: 1; 

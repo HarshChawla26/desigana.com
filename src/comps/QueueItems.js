@@ -6,20 +6,23 @@ export default function QueueItems(props) {
     const [toShow, settoShow] = useState(props.play);
     let t=props.tNo;  
         
-    useEffect(() => {
-    //   console.log(`kya h? ${props.currSong+props.currarr+1}`)
-      if(props.play){
-      yes()}
-    }, [props.currSong]);
-    function yes(){
+    const yes = ()=>{
         
-        if(props.currSong+props.currarr+1==props.tNo){
+        if(props.currSong+props.currarr+1===props.tNo){
             settoShow(true)
         }else{settoShow(false)}
-    }
+    } 
+    // useEffect(() => {
+    //     if(props.play){
+    //         yes()
+    //     }
+    // }, [props.currSong]);
     useEffect(() => {
-        if(props.play){yes()}else{settoShow(false)}
-    //   settoShow(props.play)
+        if(props.play){
+            yes()
+        }else{
+            settoShow(false)
+        }
     }, [props.play]);
     if(t<10&&t>0){
         t = '0' + props.tNo;
@@ -40,7 +43,7 @@ export default function QueueItems(props) {
                     {t}
                 </div>
                 <div className="coverer">
-                    <img alt='image not available' src={`${props.tImg}`}/>{/*src={pL1}*/}
+                    <img src={`${props.tImg}`} alt="not available"></img>{/*src={pL1}*/}
                     <i className=" fas fa-play-circle"></i>
                 </div>
                 {/* <!-- name and author of the song --> */}

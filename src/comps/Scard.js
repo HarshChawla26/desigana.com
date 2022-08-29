@@ -7,11 +7,6 @@ export default function Scard(props) {
     const [toShow, settoShow] = useState(props.play);
     let t=props.SongId;  
         
-    useEffect(() => {
-    //   console.log(`kya h? ${props.currSong+props.currarr+1}`)
-      if(props.play){
-      yes()}
-    }, [props.currSong]);
     function yes(){
         
         if(props.currSong+props.currarr+1==props.SongId){
@@ -19,8 +14,15 @@ export default function Scard(props) {
         }else{settoShow(false)}
     }
     useEffect(() => {
-        if(props.play){yes()}else{settoShow(false)}
-    //   settoShow(props.play)
+      if(props.play){
+      yes()}
+    }, [props.currSong]);
+    useEffect(() => {
+        if(props.play){
+          yes()
+        }else{
+          settoShow(false)
+        }
     }, [props.play]);
 
     

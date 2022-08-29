@@ -84,7 +84,6 @@ function App() {
           setsongDet={setsongDet}
           setcurrarr={setcurrarr}
           playMus={loadCrdMus}
-          // setcurrarr={setcurrarr}
           songDet={songDet} 
           currSong={currSong} 
           setcurrSong={setcurrSong} 
@@ -96,8 +95,7 @@ function App() {
           currSong={currSong}
           play={play}
           def={def}data={data}
-          songDet={songDet} 
-          // currarr={currarr}
+          songDet={songDet}
         />
       </div></div>
     </> 
@@ -106,7 +104,7 @@ function App() {
       setisplay={setplay}
       setsongDet={setsongDet}
       songDet={songDet}
-      currarr={currarr}
+      currarr={currarr} 
       Sid={songDet[currSong].SongId}
       Sname={songDet[currSong].name}
       playMus={loadMusic} 

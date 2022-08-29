@@ -1,5 +1,5 @@
-import MusicDetail from './../js/SongDetails'
-import './../comps/Footer'
+// import MusicDetail from './../js/SongDetails'
+// import './../comps/Footer'
 // const hiSArr = MusicDetail.HindiMusicDetail;
 // console.log( hiSArr[1].singer);
 /* important selectors declarations *
