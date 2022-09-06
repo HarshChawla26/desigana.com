@@ -6,7 +6,7 @@ export default function QueueItems(props) {
     const [toShow, settoShow] = useState(props.play);
     let t=props.tNo;  
         
-    const yes = ()=>{
+    const chgCurrSongStyle = ()=>{
         
         if(props.currSong+props.currarr+1===props.tNo){
             settoShow(true)
@@ -14,12 +14,12 @@ export default function QueueItems(props) {
     } 
     // useEffect(() => {
     //     if(props.play){
-    //         yes()
+    //         chgCurrSongStyle()
     //     }
     // }, [props.currSong]);
     useEffect(() => {
         if(props.play){
-            yes()
+            chgCurrSongStyle()
         }else{
             settoShow(false)
         }

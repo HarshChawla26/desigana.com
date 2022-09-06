@@ -1,23 +1,18 @@
-import {React,useState,useRef,useEffect} from 'react';
+import {React,useState,useRef} from 'react';
 import './../js/Hsongscript'
 
 import './../css/Stylesheet_main.css';
 export default function Footer(props) {
-    var claa = props.Sid;
     const audioEl =  useRef(),
     durtime = useRef(null),
     currtime=useRef(),
     progress=useRef(),
     volm = useRef(),
     muteBtn = useRef();
-    useEffect(() => {
-        console.log(claa);
-      }, [claa]);
+    
+    const [isPlaying, setisPlaying] = useState(false);
     const [isMuted, setisMuted] = useState(false);
-    function tmp(){
-        props.setsongDet()
-        console.log(props.songDet)
-    }
+
     function setvol(x){
         document.querySelector(".dot2").style.width = (x*100) + "%";
         document.querySelector(".dot2 div").style.left = (x*100) + "%";
@@ -51,24 +46,22 @@ export default function Footer(props) {
             // localStorage.setItem('vol',audioEl.current.volume)
         }
     }
-    const [isPlaying, setisPlaying] = useState(false);
     window.addEventListener("load",()=>{
         if(localStorage.getItem('vol')!==1){
-        var x=localStorage.getItem('vol')
-        localStorage.setItem('vol',x)
-        setvol(x);
-    }else{localStorage.setItem('vol','1')}
-
-    // useEffect
+            var x=localStorage.getItem('vol')
+            localStorage.setItem('vol',x)
+            setvol(x);
+        }else{
+            localStorage.setItem('vol','1')
+        }
+    
 
         // localStorage.setItem('vol',audioEl.current.volume)
         audioEl.current.addEventListener("timeupdate",()=>{
-            if(audioEl.current.ended){
-                nexMus();
-            }
             Progress();
         })
         
+
         /*function to update song progress user defined */
         progress.current.addEventListener("click",(event)=>{
             var progressWid = progress.current.clientWidth;
@@ -93,7 +86,8 @@ export default function Footer(props) {
         
         var cmin = parseInt(curr/60);
         var csec = parseInt(curr%60);
-    
+
+        console.log(currPer);
         var z
         if(csec<10){
             z ='0';
@@ -114,7 +108,6 @@ export default function Footer(props) {
     function toggleMusic(){
         if(!isPlaying){
             props.setisplay(true)
-            // console.log(props.isplay)
             audioEl.current.play();
             setisPlaying(true)
         }else{
@@ -152,17 +145,17 @@ export default function Footer(props) {
     }
     
 
-    document.addEventListener("keydown",(event)=>{
-        if(event.keyCode === '32' ){
-            toggleMusic();
-        }
-        if(event.keyCode === '37' ){
-            preMus();
-        }
-        if(event.keyCode === '39' ){
-            nexMus();
-        }
-    })
+    // document.addEventListener("keydown",(event)=>{
+    //     if(event.keyCode === '32' ){
+    //         toggleMusic();
+    //     }
+    //     if(event.keyCode === '37' ){
+    //         preMus();
+    //     }
+    //     if(event.keyCode === '39' ){
+    //         nexMus();
+    //     }
+    // })
 
     
     
@@ -203,7 +196,7 @@ export default function Footer(props) {
             <i className={`fas switch1 fa-${isPlaying?'pause-circle':'play-circle'}`}></i>
         </div>
         <div data-bs-toggle="tooltip" onClick={nexMus} data-bs-placement="top" title="Next song"><i className="fas fa-step-forward"></i></div>
-        <div id="rep" data-bs-toggle="tooltip" onClick={tmp} data-bs-placement="top" title="Replay is off"><i className="fas fa-redo"></i></div>
+        <div id="rep" data-bs-toggle="tooltip" data-bs-placement="top" title="Replay is off"><i className="fas fa-redo"></i></div>
     </div>
     {/* <!-- this is the slider --> */}
     <div id="slider">

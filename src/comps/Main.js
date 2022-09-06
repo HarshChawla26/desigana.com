@@ -465,7 +465,7 @@ export default function Main(props) {
                             currSong={props.currSong}
                             play={props.play}
                             setsongDet={props.setsongDet}
-                            playMus={props.playMus}
+                            loadCrdMus={props.loadCrdMus}
                             key={e.SongId}
                             SongId={e.SongId}
                             arrRef={e.arrRef}
