@@ -27,9 +27,9 @@ import Scard from './Scard';
 export default function Main(props) {
     
 
-    const hiSArr = MusicDetail.HindiMusicDetail,
-    j = MusicDetail.EnglishMusicDetail,
-    k = MusicDetail.PunjabiMusicDetail;
+    const HindiArray = MusicDetail.HindiMusicDetail,
+    EnglishArray = MusicDetail.EnglishMusicDetail,
+    PunjabiArray = MusicDetail.PunjabiMusicDetail;
     window.addEventListener("load",()=>{
         // console.log(props.songDet);
     // props.playMus(26)
@@ -459,13 +459,8 @@ export default function Main(props) {
                 {/* <!-- contents of latest english --> */}
                 <div className="language-content">
                 
-                {j.map((e)=>{
+                {EnglishArray.map((e)=>{
                     return <Scard
-                            currarr={props.currarr}
-                            currSong={props.currSong}
-                            play={props.play}
-                            setsongDet={props.setsongDet}
-                            loadCrdMus={props.loadCrdMus}
                             key={e.SongId}
                             SongId={e.SongId}
                             arrRef={e.arrRef}
@@ -485,13 +480,8 @@ export default function Main(props) {
                 {/* <span><a href="#"><i className="fas fa-chevron-circle-down"></i></a></span> */}
                 {/* <!-- hindi section contents --> */}
                 <div className="language-content">
-                    {hiSArr.map((e)=>{
+                    {HindiArray.map((e)=>{
                     return <Scard
-                                currarr={props.currarr}
-                                currSong={props.currSong}
-                                play={props.play}
-                                setsongDet={props.setsongDet}
-                                playMus={props.playMus}
                                 key={e.SongId}
                                 SongId={e.SongId}
                                 arrRef={e.arrRef}
@@ -510,13 +500,8 @@ export default function Main(props) {
                 {/* <span><a href="#"><i className="fas fa-chevron-circle-down"></i></a></span> */}
                 {/* <!-- hindi section contents --> */}
                 <div className="language-content">
-                    {k.map((e)=>{
+                    {PunjabiArray.map((e)=>{
                     return <Scard
-                                currarr={props.currarr}
-                                currSong={props.currSong}
-                                play={props.play}
-                                setsongDet={props.setsongDet}
-                                playMus={props.playMus}
                                 key={e.SongId}
                                 SongId={e.SongId}
                                 arrRef={e.arrRef}

@@ -1,8 +1,10 @@
-import {React,useState,useRef} from 'react';
+import {React,useState,useRef,useContext,useEffect} from 'react';
 import './../js/Hsongscript'
+import songContext from '../context/songContext';
 
 import './../css/Stylesheet_main.css';
-export default function Footer(props) {
+export default function Footer() {
+    const song = useContext(songContext)
     const audioEl =  useRef(),
     durtime = useRef(null),
     currtime=useRef(),
@@ -13,50 +15,49 @@ export default function Footer(props) {
     const [isPlaying, setisPlaying] = useState(false);
     const [isMuted, setisMuted] = useState(false);
 
-    function setvol(x){
-        document.querySelector(".dot2").style.width = (x*100) + "%";
-        document.querySelector(".dot2 div").style.left = (x*100) + "%";
-        if(!isMuted){
-            audioEl.current.volume = x;
-        }
-    }
-    function changeVol(event){
-        console.log(event.nativeEvent.offsetX);
-        var volWid = volm.current.clientWidth;
-        var clickedWid2 = event.nativeEvent.offsetX;
-        let totVol = (clickedWid2/volWid);
-        localStorage.setItem('vol',totVol)
+    // function setvol(x){
+    //     document.querySelector(".dot2").style.width = (x*100) + "%";
+    //     document.querySelector(".dot2 div").style.left = (x*100) + "%";
+    //     if(!isMuted){
+    //         audioEl.current.volume = x;
+    //     }
+    // }
+    // function changeVol(event){
+    //     console.log(event.nativeEvent.offsetX);
+    //     var volWid = volm.current.clientWidth;
+    //     var clickedWid2 = event.nativeEvent.offsetX;
+    //     let totVol = (clickedWid2/volWid);
+    //     localStorage.setItem('vol',totVol)
         
-        console.log(volm.current);
-        document.querySelector(".dot2").style.width = (totVol*100) + "%";
-        document.querySelector(".dot2 div").style.left = (totVol*100) + "%";
-        if(!isMuted){
-            audioEl.current.volume = totVol;
-        }
-    }
+    //     console.log(volm.current);
+    //     document.querySelector(".dot2").style.width = (totVol*100) + "%";
+    //     document.querySelector(".dot2 div").style.left = (totVol*100) + "%";
+    //     if(!isMuted){
+    //         audioEl.current.volume = totVol;
+    //     }
+    // }
     
-    function togglevol(){
-        if(!isMuted){
-            setisMuted(true)
-            audioEl.current.volume = 0;
-        }
-        if(isMuted){
-            setisMuted(false)
-            audioEl.current.volume =  localStorage.getItem('vol');
-            // localStorage.setItem('vol',audioEl.current.volume)
-        }
-    }
+    // function togglevol(){
+    //     if(!isMuted){
+    //         setisMuted(true)
+    //         audioEl.current.volume = 0;
+    //     }
+    //     if(isMuted){
+    //         setisMuted(false)
+    //         audioEl.current.volume =  localStorage.getItem('vol');
+    //         // localStorage.setItem('vol',audioEl.current.volume)
+    //     }
+    // }
     window.addEventListener("load",()=>{
         if(localStorage.getItem('vol')!==1){
             var x=localStorage.getItem('vol')
             localStorage.setItem('vol',x)
-            setvol(x);
+            // setvol(x);
         }else{
             localStorage.setItem('vol','1')
         }
     
 
-        // localStorage.setItem('vol',audioEl.current.volume)
         audioEl.current.addEventListener("timeupdate",()=>{
             Progress();
         })
@@ -70,16 +71,16 @@ export default function Footer(props) {
         })
         
         muteBtn.current.addEventListener("click",()=>{
-            togglevol()
+            // togglevol()
         })
     })
     function Progress1(){
         audioEl.current.currentTime = (96*audioEl.current.duration)/100;
     }
     function Progress(){
-        // if(audioEl.current.ended){
-        //     nexMus();
-        // }
+        if(audioEl.current.ended){
+            nexMus();
+        }
         var curr = audioEl.current.currentTime;
         var total = audioEl.current.duration;  
         var currPer = (curr/total) * 100;
@@ -87,7 +88,6 @@ export default function Footer(props) {
         var cmin = parseInt(curr/60);
         var csec = parseInt(curr%60);
 
-        console.log(currPer);
         var z
         if(csec<10){
             z ='0';
@@ -107,36 +107,33 @@ export default function Footer(props) {
 
     function toggleMusic(){
         if(!isPlaying){
-            props.setisplay(true)
+            song.setplay(true)
             audioEl.current.play();
             setisPlaying(true)
         }else{
-            props.setisplay(false)
+            song.setplay(false)
             setisPlaying(false)
             audioEl.current.pause();
         }
         
     }
     function preMus(){
-        console.log(props.Sid);
-        if((props.Sid - props.currarr - 2)<0){
-         props.playMus(props.Sid-1);
+        if((song.currSong - song.currarr - 1)<0){
+         song.loadMusic(song.currSong);
         }
         else{
-            props.playMus(props.Sid - 2);
+            song.loadMusic(song.currSong - 1);
         }
-        // if(isPlaying) toggleMusic();
         document.querySelector(".dot1").style.width = 0 + "%";
         document.querySelector(".dot1 div").style.left = 0 + "%";
 
     }
     function nexMus(){
-        console.log(`Sid : ${props.Sid}`);
-        if(((props.Sid - props.currarr) + 1)>props.songDet.length ){
-             props.playMus(props.Sid -1);
+        if(((song.currSong - song.currarr)+1)>=song.songDet.length ){
+            song.loadMusic(song.currSong);
         }
         else{
-            props.playMus(props.Sid);
+            song.loadMusic(song.currSong+1);
         }
         document.querySelector(".dot1").style.width = 0 + "%";
         document.querySelector(".dot1 div").style.left = 0 + "%";
@@ -144,19 +141,6 @@ export default function Footer(props) {
             audioEl.current.play();}
     }
     
-
-    // document.addEventListener("keydown",(event)=>{
-    //     if(event.keyCode === '32' ){
-    //         toggleMusic();
-    //     }
-    //     if(event.keyCode === '37' ){
-    //         preMus();
-    //     }
-    //     if(event.keyCode === '39' ){
-    //         nexMus();
-    //     }
-    // })
-
     
     
     
@@ -166,15 +150,15 @@ export default function Footer(props) {
         <div className="active-song-description">
             {/* <!-- song image --> */}
             <div id="song-image">
-                <img id="song-image1"  alt="Not selected" src={props.imgS} />
+                <img id="song-image1"  alt="Not selected" src={song.songobj.img} />
             </div>
             {/* <!-- song name and author --> */}
             <div className="song-desc">
                 <div id="song-name">
-                    {props.Sname}
+                    {song.songobj.name}
                 </div>
                 <p id="singer-name">
-                    {props.singer}
+                    {song.songobj.singer}
                 </p>
                 {/* <!-- heart icon and ban icon --> */}
             </div>
@@ -205,13 +189,14 @@ export default function Footer(props) {
             0:00
         </div>
         
-        <audio id="audio" ref={audioEl} src={`${props.Asrc?props.Asrc:console.log('song not selected')}`} ></audio>
+        <audio id="audio" ref={audioEl} src={`${song.songobj.song}`} ></audio>
         <div ref={progress} className="slidecontainer progress">
             <div className="slider progress-bar dot1" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><div></div></div>
         </div> 
         {/* <!-- total time --> */}
         <div ref={durtime} className="tottime">
-            {props.dur}
+            {/* {props.dur} */}
+            {song.songobj.duration}
         </div>
         </div>
         </div>
@@ -224,11 +209,11 @@ export default function Footer(props) {
             <div>
                 <a href="/" id="lap"><i className="fas fa-laptop"></i></a>
             </div>
-            <div className="mute-btn" onClick={togglevol}>
+            <div className="mute-btn">
                 <i className={`fas fa-volume-${isMuted?'mute':'up'}`}></i>
                 
             </div>
-            <div ref={volm} onClick={(e)=>{changeVol(e)}} className="slidecontainer volume progress">
+            <div ref={volm} className="slidecontainer volume progress">
                 <div className="slider progress-bar dot2" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><div></div></div>
             </div> 
             {/* <!-- <div>

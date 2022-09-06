@@ -1,50 +1,52 @@
-import React,{useRef,useState,useEffect} from 'react';
+import React,{useRef,useState,useEffect,useContext} from 'react';
 import './../css/Stylesheet_main.css';
+import songContext from '../context/songContext';
 import MusicDetail from './../js/SongDetails'
 export default function Scard(props) {
-    const crd  = useRef();
+    const card  = useRef();
+    const song_context = useContext(songContext)
     
-    const [toShow, settoShow] = useState(props.play);
+    const [toShow, settoShow] = useState(song_context.play);
         
     function chgCurrSongStyle(){
         
-        if(props.currSong+props.currarr+1===props.SongId){
+        if(song_context.currSong+song_context.currarr+1===props.SongId){
             settoShow(true)
         }else{settoShow(false)}
     }
     useEffect(() => {
-      if(props.play){
+      if(song_context.play){
         chgCurrSongStyle()
       }
-    }, [props.currSong]);
+    }, [song_context.currSong]);
     
     useEffect(() => {
-        if(props.play){
+        if(song_context.play){
           chgCurrSongStyle()
         }else{
           settoShow(false)
         }
-    }, [props.play]);
+    }, [song_context.play]);
 
     
-  function as(){
-    if(crd.current.accessKey==='0'){
-    props.setsongDet(MusicDetail.HindiMusicDetail)
+  function setting(){
+    if(card.current.accessKey==='0'){
+      song_context.setsongDet(MusicDetail.HindiMusicDetail)
     }
-    if(crd.current.accessKey==='10'){
-      props.setsongDet(MusicDetail.EnglishMusicDetail)
+    if(card.current.accessKey==='10'){
+      song_context.setsongDet(MusicDetail.EnglishMusicDetail)
     }
-    if(crd.current.accessKey==='20'){
-      props.setsongDet(MusicDetail.PunjabiMusicDetail)
+    if(card.current.accessKey==='20'){
+      song_context.setsongDet(MusicDetail.PunjabiMusicDetail)
     }
   }
-  function plyCrd(){
-    as();
-    props.loadCrdMus(parseInt(crd.current.attributes.song.value)-1,parseInt(crd.current.accessKey));    
+  function plycard(){
+    setting();
+    song_context.loadCrdMus(parseInt(card.current.attributes.song.value)-1,parseInt(card.current.accessKey));    
   }
     
   return (
-    <div  ref={crd} className={`${toShow?'curr':'not'}playing`} id="h1" onClick={plyCrd} accessKey={props.arrRef} song={props.SongId} >
+    <div ref={card} onClick={plycard} className={`${toShow?'curr':'not'}playing`} id="h1" accessKey={props.arrRef} song={props.SongId} >
         <div  ><img src = {props.img} alt="img not found" />
         <i className=" fas fa-play-circle"></i></div>
         <p data-bs-toggle="tooltip" data-bs-placement="top" title={`${props.name}`}>{props.name}</p>

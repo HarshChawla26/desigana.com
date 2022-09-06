@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import CurrSong from "./context/CurrSong"
 ReactDOM.render(
   <React.StrictMode>
+    <CurrSong>
     <App />
+    </CurrSong>
   </React.StrictMode>,
   document.getElementById('root')
 );

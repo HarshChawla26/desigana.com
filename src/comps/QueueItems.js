@@ -1,42 +1,46 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useContext} from 'react';
 import './../css/Stylesheet_main.css';
+import songContext from '../context/songContext';
 
 export default function QueueItems(props) {
-
-    const [toShow, settoShow] = useState(props.play);
+    const song = useContext(songContext);
+    const [toShow, settoShow] = useState(song.play);
     let t=props.tNo;  
         
     const chgCurrSongStyle = ()=>{
         
-        if(props.currSong+props.currarr+1===props.tNo){
+        if(song.currSong+song.currarr+1===props.tNo){
             settoShow(true)
         }else{settoShow(false)}
     } 
-    // useEffect(() => {
-    //     if(props.play){
-    //         chgCurrSongStyle()
-    //     }
-    // }, [props.currSong]);
+
     useEffect(() => {
-        if(props.play){
+        if(song.play){
+            chgCurrSongStyle()
+        }
+    }, [song.currSong]);
+    
+    useEffect(() => {
+        if(song.play){
             chgCurrSongStyle()
         }else{
             settoShow(false)
         }
-    }, [props.play]);
+    }, [song.play]);
+
+    
     if(t<10&&t>0){
         t = '0' + props.tNo;
     }
-    else{t= props.tNo - props.currarr;if(t<10&&t>0){
+    else{t= props.tNo - song.currarr;
+        if(t<10&&t>0){
         t = '0' + t;
-    }}
-    function plyQue(){
-        props.loadMusic(props.tNo-1);
-          
+        }
     }
+
   return (
       <>
-    <div onClick={plyQue} className={`playlist-item ${toShow?'curr':'not'}playing`}>
+    <div onClick={()=>{song.loadMusic(props.tNo-1)}} className={`playlist-item ${toShow?'curr':'not'}playing`}>
             <div className="left-content">
                 {/* <!-- index --> */}
                 <div style={{marginRight:'4px'}}>
@@ -52,7 +56,7 @@ export default function QueueItems(props) {
                         {props.tName}
                     </div>
                     <p style={{fontStyle:"italic",fontSize:'75%'}}>
-                        {props.tsinger}
+                        {props.tsinger.length>20?(props.tsinger.slice(0,20) + '....'):props.tsinger}
                     </p>
                 </div>
             </div>
